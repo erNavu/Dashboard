@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import * as Icons from '../assets';
 const InfoCard = ({ data }) => {
 
-    const { title, amount, info, icon, percent, bgColor } = data
+    const { title, amount, info, icon, percent = '', bgColor = 'transparent' } = data
     return (
         <div className="bg-white shadow-md p-4 rounded-lg w-full flex  justify-between">
             <div>
@@ -15,6 +16,17 @@ const InfoCard = ({ data }) => {
             <div className=""><img style={{ backgroundColor: bgColor }} className="p-2 rounded-md w-9" alt="icon" src={Icons[icon]} /></div>
         </div>
     )
+};
+
+InfoCard.propTypes = {
+    data: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        info: PropTypes.string,
+        icon: PropTypes.string.isRequired,
+        percent: PropTypes.string,
+        bgColor: PropTypes.string,
+    }).isRequired,
 };
 
 export default InfoCard;

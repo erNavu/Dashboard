@@ -3,14 +3,13 @@ import { Logo, ArrowDown } from "../assets";
 
 const GreetingHeader = () => {
     return (
-        <div className="flex items-center justify-between bg-gray-50 p-4 border-b border-gray-200">
-            <div className="flex space-x-6">
-                <div className="w-10 h-10 flex items-center justify-center">
+        <div className="sm:flex items-center justify-between bg-gray-50 p-4 border-b border-gray-200">
+            <div className="flex space-x-4 sm:space-x-6">
+                <div className="w-6 h-6 sm:w-10 sm:h-10 flex items-center justify-center">
                     <img src={Logo} alt='logo' />
                 </div>
-
                 <div >
-                    <p className="text-2xl font-semibold">Hello, Rahul</p>
+                    <p className="lg:text-2xl font-semibold">Hello, Rahul</p>
                     <p className="text-sm text-gray-500">ORUE PVT. LTD.</p>
                 </div>
                 <button className="bg-secondary h-8 text-white px-3 py-1 rounded-md text-[11px] font-bold">

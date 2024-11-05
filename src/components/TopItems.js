@@ -7,7 +7,7 @@ const TopItems = ({ data, title }) => {
     const [activeTab, setActiveTab] = useState("volume");
 
     return (
-        <div className="border-l p-4 w-full">
+        <div className="border-l px-4 w-full">
             <div className="flex justify-between items-center">
                 <h3 className="font-semibold flex-1">{title}</h3>
                 <div className="flex bg-gray-100 rounded-full">

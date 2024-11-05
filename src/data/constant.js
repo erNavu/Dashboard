@@ -8,3 +8,5 @@ export const PATH_COORDINATES = [
 ];
 
 export const MAP_CENTER = [30.5222, 76.5565]; // Center between Patiala and Mohali
+
+export const SHIPMENT_ID = '#003455MNP'

@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
 import { ArrowRight, Truck, ShipmentArrow } from "../assets";
 const ShipmentCard = ({ shipment }) => {
-    return (
+    const memoizedShipmentCard = useMemo(() => (
         <div className='p-4 bg-border border border-border rounded-lg space-x-3'>
             <div className="flex items-center ">
                 <div>
                     <div className="text-[10px] text-light">Shipment ID</div>
                     <div className="font-bold text-gray-900">{shipment.id}</div>
-
                 </div>
                 <div className="flex-grow flex justify-end">
                     <div className="relative w-24 h-12">
@@ -28,7 +28,6 @@ const ShipmentCard = ({ shipment }) => {
                         </div>
                     </div>
                 </div>
-
             </div>
             <div className="flex items-center justify-start mt-2 ml-[0!important] space-x-1">
                 <span className="text-green-500">&#9679;</span>
@@ -38,7 +37,18 @@ const ShipmentCard = ({ shipment }) => {
                 <span className="text-[10px]">{shipment.toAddress}</span>
             </div>
         </div>
-    )
+    ), [shipment]);
+
+    return memoizedShipmentCard;
 }
+
+ShipmentCard.propTypes = {
+    shipment: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        progress: PropTypes.string.isRequired,
+        fromAddress: PropTypes.string.isRequired,
+        toAddress: PropTypes.string.isRequired,
+    }).isRequired,
+};
 
 export default ShipmentCard
