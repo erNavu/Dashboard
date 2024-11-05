@@ -40,11 +40,10 @@ const InventoryOverview = () => {
                     color: 'gray',
                     font: { size: 14, family: 'Arial' },
                 },
-                grid: {
-                    borderDash: [5, 5],
-                    color: 'rgba(200, 200, 200, 0.4)',
+                border: {
+                    dash: [5, 5],
+                    display: false
                 },
-                border: { display: false },
             },
             x: {
                 grid: { display: false },
