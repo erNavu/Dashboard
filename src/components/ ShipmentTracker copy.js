@@ -38,7 +38,7 @@ const ShipmentTracker = () => {
                 <div className="font-bold text-gray-700">{arrivalTime}</div>
             </div>
             <div className="mt-4">
-                <LoadScript googleMapsApiKey="AIzaSyAwDK8abEO6G6gp1mk-uvwfTjfkC9v-EBs">
+                <LoadScript googleMapsApiKey={process.env.GOOGLE_MAP_API_KEY}>
                     <GoogleMap
                         mapContainerStyle={mapContainerStyle}
                         center={MAP_CENTER}
